@@ -1,0 +1,37 @@
+@import '../../../styles/settings.scss';
+@import '../../../styles/global.scss';
+
+.carousel {
+  margin: 48px 0;
+  border-radius: 10px;
+
+  .carouselItem {
+    z-index: 0;
+  }
+  img {
+    height: 500px;
+    object-fit: cover;
+  }
+  .content {
+    z-index: 3;
+
+    h3 {
+      font-size: $base-size * 4;
+    }
+    p {
+      font-size: $base-size * 2;
+    }
+  }
+}
+
+.carouselItem::after {
+  content: '';
+  backdrop-filter: blur(50px);
+  min-height: 110px;
+  width: 100%;
+  position: absolute;
+  top: 82%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
