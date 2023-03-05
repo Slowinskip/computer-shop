@@ -10,7 +10,9 @@ const NavBar = () => {
       <Container>
         <Navbar.Brand href="/">
           <div class={styles.logo_div}>
-            <button href="/">Comp-Shop</button>
+            <button href="/">
+              Comp-<span>Shop</span>
+            </button>
           </div>
         </Navbar.Brand>
         <Navbar.Collapse
