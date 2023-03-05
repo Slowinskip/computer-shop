@@ -1,5 +1,5 @@
 function App() {
-  return 1
+  return <main>1</main>
 }
 
 export default App
