@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Col, Container, Form, Nav, Row } from 'react-bootstrap'
+import { Button, Col, Container, Form } from 'react-bootstrap'
 import styles from './Navbar.module.scss'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
@@ -40,10 +40,10 @@ const NavBar = () => {
               </Button>
             </Link>
           </Col>
-          <Col className={'col-2 '}>
+          <Col className={'col-1 '}>
             <p
               className={
-                'd-flex align-items-center justify-content-center m-0 ' +
+                'd-flex align-items-center justify-content-center m-0  ' +
                 styles.cartLenght
               }
             >
