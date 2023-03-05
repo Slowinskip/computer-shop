@@ -3,4 +3,32 @@
 
 .footer {
   background-color: $main-color;
+  margin-top: 36px;
+
+  .links {
+    padding: 24px;
+  }
+
+  .links a,
+  h6 {
+    text-decoration: none;
+    color: $color-orange;
+    &:hover {
+      color: $color-white;
+    }
+  }
+
+  .media {
+    padding: 24px;
+    display: flex;
+    justify-content: space-around;
+    a {
+      font-size: $base-size * 3;
+      text-decoration: none;
+      color: $color-orange;
+      &:hover {
+        color: $color-white;
+      }
+    }
+  }
 }
