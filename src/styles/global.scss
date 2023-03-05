@@ -1,0 +1,10 @@
+@import './settings.scss';
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap');
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+main {
+  font-family: 'Lato', sans-serif;
+}

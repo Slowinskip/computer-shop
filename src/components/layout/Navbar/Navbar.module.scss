@@ -1,0 +1,37 @@
+@import '../../../styles/settings.scss';
+@import '../../../styles/global.scss';
+
+.navbar {
+  background-color: $main-color;
+
+  .logo_div button {
+    background-color: transparent;
+    border: none;
+    color: $color-white;
+    font-weight: 800;
+    font-size: $base-size * 2;
+  }
+
+  .colapse {
+  }
+
+  .cartLenght {
+    color: $color-white;
+    background-color: $color-orange;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+  }
+
+  .bnt {
+    color: $color-orange;
+    border-color: $color-orange;
+    font-size: $base-size * 1.5;
+
+    &:hover {
+      background-color: transparent;
+      color: $color-white;
+      border-color: $color-white;
+    }
+  }
+}
