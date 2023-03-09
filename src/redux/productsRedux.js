@@ -4,7 +4,7 @@ export const getProductsComputer = ({ products }) =>
 export const getProductsKayboardAndMouse = ({ products }) =>
   products.filter((product) => product.category === 'keybordandmouse')
 export const getProductsById = ({ products }, id) =>
-  products.find((product) => product.id === id)
+  products.find((product) => product.id == id)
 const createActionName = (actionName) => `app/products/${actionName}`
 
 const productsReducer = (statePart = [], action) => {

@@ -24,39 +24,37 @@ const FeatureProducts = () => {
             <Tab className={styles.tab}>Mice and keyboards</Tab>
           </TabList>
         </Col>
-        <Container>
-          <div className={styles.container}>
-            <TabPanel>
-              <Row xs={1} md={2} lg={4} className="g-3 ">
-                {allProducts.map((product) => (
-                  <Col key={product.id}>
-                    <ProductBox {...product} />
-                  </Col>
-                ))}
-              </Row>
-            </TabPanel>
-            <TabPanel>
-              {' '}
-              <Row xs={1} md={2} lg={4} className="g-3 ">
-                {computerProducts.map((product) => (
-                  <Col key={product.id}>
-                    <ProductBox {...product} />
-                  </Col>
-                ))}
-              </Row>
-            </TabPanel>
-            <TabPanel>
-              {' '}
-              <Row xs={1} md={2} lg={4} className="g-3 ">
-                {keyAndMouseProducts.map((product) => (
-                  <Col key={product.id}>
-                    <ProductBox {...product} />
-                  </Col>
-                ))}
-              </Row>
-            </TabPanel>
-          </div>
-        </Container>
+        <div className={styles.container}>
+          <TabPanel>
+            <Row xs={1} md={2} lg={4} className="g-3 ">
+              {allProducts.map((product) => (
+                <Col key={product.id}>
+                  <ProductBox {...product} />
+                </Col>
+              ))}
+            </Row>
+          </TabPanel>
+          <TabPanel>
+            {' '}
+            <Row xs={1} md={2} lg={4} className="g-3 ">
+              {computerProducts.map((product) => (
+                <Col key={product.id}>
+                  <ProductBox {...product} />
+                </Col>
+              ))}
+            </Row>
+          </TabPanel>
+          <TabPanel>
+            {' '}
+            <Row xs={1} md={2} lg={4} className="g-3 ">
+              {keyAndMouseProducts.map((product) => (
+                <Col key={product.id}>
+                  <ProductBox {...product} />
+                </Col>
+              ))}
+            </Row>
+          </TabPanel>
+        </div>
       </Tabs>
     </Row>
   )

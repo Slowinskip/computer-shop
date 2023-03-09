@@ -8,10 +8,10 @@ const ProductBox = (props) => {
   const handleSubmit = () => {}
 
   return (
-    <Card className={styles.card} style={{ backgroundColor: '#f39c12' }}>
+    <Card className={styles.card} style={{ backgroundColor: '#d35400' }}>
       <Card.Img
         className={styles.cardImage}
-        variant="top" //F:\Projects\computer-shop\public\image\productImage\Mamba_Elite_1.jpg
+        variant="top"
         src={`./image/productImage/${props.image[0]}.jpg`}
       ></Card.Img>
       <Card.Body className="text-center">
