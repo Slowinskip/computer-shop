@@ -1,11 +1,36 @@
-import React from 'react'
-import { Button, Card, Col } from 'react-bootstrap'
+import React, { useEffect, useState } from 'react'
+import { Alert, Button, Card, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import styles from './ProductBox.module.scss'
 import { BsCart } from 'react-icons/bs'
+import shortid from 'shortid'
+import { useDispatch, useSelector } from 'react-redux'
+import { addCart } from '../../../redux/cartRedux'
+import { getProductsById } from '../../../redux/productsRedux'
 
 const ProductBox = (props) => {
-  const handleSubmit = () => {}
+  const [status, setStatus] = useState('')
+  const product = useSelector((state) => getProductsById(state, props.id))
+
+  useEffect(() => {
+    setTimeout(() => {
+      setStatus('')
+    }, '3000')
+  }, [status])
+
+  const dispatch = useDispatch()
+  const handleSubmit = () => {
+    const data = { id: shortid(), product }
+    dispatch(addCart(data))
+    console.log(data)
+    if (!localStorage.getItem('cart')) {
+      localStorage.setItem('cart', '[]')
+    }
+    let cart = JSON.parse(localStorage.getItem('cart'))
+    cart.push(data)
+    localStorage.setItem('cart', JSON.stringify(cart))
+    setStatus('succes')
+  }
 
   return (
     <Card className={styles.card} style={{ backgroundColor: '#d35400' }}>
@@ -41,10 +66,15 @@ const ProductBox = (props) => {
           <Button
             className={'mt-3 mx-2 ' + styles.cardButton}
             variant="outline-secondary"
-            onClick={handleSubmit()}
+            onClick={handleSubmit}
           >
             <BsCart />
           </Button>
+          {status === 'succes' && (
+            <Alert variant="success" className="mt-3">
+              <Alert.Heading>Add to cart</Alert.Heading>
+            </Alert>
+          )}
         </Col>
       </Card.Body>
     </Card>

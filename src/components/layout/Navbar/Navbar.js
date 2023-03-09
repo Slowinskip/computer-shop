@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Col, Container, Form } from 'react-bootstrap'
 import styles from './Navbar.module.scss'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
 import { BsCart, BsSearch } from 'react-icons/bs'
 const NavBar = () => {
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem('cart')) || [],
+  )
+  useEffect(() => {
+    if (cart.length !== 0) {
+      setCart(JSON.parse(localStorage.getItem('cart')))
+      getLength()
+    }
+  }, [cart])
+
+  function getLength() {
+    let total = 0
+    cart.forEach((item) => {
+      total = total + 1
+    })
+
+    return total
+  }
   return (
     <Navbar className={styles.navbar}>
       <Container>
@@ -49,7 +67,7 @@ const NavBar = () => {
                 styles.cartLenght
               }
             >
-              0
+              {getLength() || 0}
             </p>
           </Col>
         </Navbar.Collapse>

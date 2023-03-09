@@ -1,17 +1,31 @@
 import React, { useState } from 'react'
-import { Button, Col, Container, Row } from 'react-bootstrap'
-import { useSelector } from 'react-redux'
+import { Alert, Button, Col, Container, Row } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { getProductsById } from '../../../redux/productsRedux'
 import styles from './ProductPage.module.scss'
-
+import shortid from 'shortid'
+import { addCart } from '../../../redux/cartRedux'
 const ProductPage = () => {
   const { id } = useParams()
   const product = useSelector((state) => getProductsById(state, id))
   const [activePhoto, setActivePhoto] = useState(product.image[0])
+  const [status, setStatus] = useState('')
   console.log(activePhoto)
+  const dispatch = useDispatch()
 
-  const handleSubmit = () => {}
+  const handleSubmit = () => {
+    const data = { id: shortid(), product }
+    dispatch(addCart(data))
+    console.log(data)
+    if (!localStorage.getItem('cart')) {
+      localStorage.setItem('cart', '[]')
+    }
+    let cart = JSON.parse(localStorage.getItem('cart'))
+    cart.push(data)
+    localStorage.setItem('cart', JSON.stringify(cart))
+    setStatus('succes')
+  }
 
   return (
     <div className={styles.separate}>
@@ -59,9 +73,14 @@ const ProductPage = () => {
               )}
             </h4>
             <p className={styles.product_description}>{product.information}</p>
-            <Button className={styles.button} onClick={handleSubmit()}>
+            <Button className={styles.button} onClick={handleSubmit}>
               Add to Card
             </Button>
+            {status === 'succes' && (
+              <Alert variant="success" className="mt-3">
+                <Alert.Heading>Add to cart</Alert.Heading>
+              </Alert>
+            )}
           </Col>
         </Row>
       </Container>
