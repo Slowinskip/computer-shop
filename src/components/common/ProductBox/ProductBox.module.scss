@@ -1,0 +1,38 @@
+@import '../../../styles/settings.scss';
+@import '../../../styles/global.scss';
+
+.card {
+  margin: 5px 5px 25px 5px;
+  border-bottom-right-radius: 45px;
+
+  .cardImage {
+    height: 200px;
+  }
+
+  .cardTitle {
+    color: $color-white;
+    font-weight: 800;
+  }
+  .price,
+  .oldPrice,
+  .normalPrice {
+    color: $color-white;
+    margin: 0 10px;
+    font-size: $base-size * 1.5;
+  }
+  .oldPrice {
+    text-decoration: line-through;
+  }
+
+  .cardButton {
+    color: $color-white;
+    border-color: $color-white;
+    font-size: $base-size * 1.2;
+
+    &:hover {
+      color: $main-color;
+      border-color: $main-color;
+      background-color: transparent;
+    }
+  }
+}

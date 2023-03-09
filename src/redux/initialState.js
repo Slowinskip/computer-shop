@@ -15,8 +15,8 @@ const initialState = {
       category: 'computer',
       name: 'APPLE MacBook Air',
       price: '5100',
-      oldPrice: '',
-      image: ['apple_1', 'apple_2', 'apple_3', 'apple_4'],
+      oldPrice: '0',
+      image: ['apple_2', 'apple_1', 'apple_3', 'apple_4'],
       information:
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
     },
@@ -35,7 +35,7 @@ const initialState = {
       category: 'keybordandmouse',
       name: 'RAZER Mamba Elite',
       price: '200',
-      oldPrice: '',
+      oldPrice: '0',
       image: [
         'Mamba_Elite_1',
         'Mamba_Elite_2',
@@ -65,7 +65,7 @@ const initialState = {
       category: 'keybordandmouse',
       name: 'RAZER Mamba Elite',
       price: '440',
-      oldPrice: '',
+      oldPrice: '0',
       image: ['logitech-1', 'logitech-2', 'logitech-3', 'logitech-4'],
       information:
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
