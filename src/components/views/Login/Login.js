@@ -39,7 +39,7 @@ const Login = () => {
   return (
     <Container className={styles.container}>
       <Form
-        className={'col-12 col-sm-3 mx-auto my-5 pb-5 ' + styles.form}
+        className={'col-12 col-md-4 mx-auto my-5 pb-5 ' + styles.form}
         onSubmit={handleSubmit}
       >
         <h1>Login</h1>{' '}
@@ -90,9 +90,14 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
-        <Button variant="primary" type="submit" className={styles.bnt}>
-          Sign in
-        </Button>
+        <div className="d-flex justify-content-around ">
+          <Button variant="primary" type="submit" className={styles.bnt}>
+            Sign in
+          </Button>
+          <Button variant="primary" href="/register" className={styles.bnt}>
+            Want an account?
+          </Button>
+        </div>
       </Form>
     </Container>
   )
