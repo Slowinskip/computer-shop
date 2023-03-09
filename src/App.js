@@ -5,7 +5,10 @@ import Footer from './components/layout/Footer/Footer'
 import Home from './components/layout/Home/Home'
 import NavBar from './components/layout/Navbar/Navbar'
 import TopBar from './components/layout/TopBar/TopBar'
+import Login from './components/views/Login/Login'
+import Logout from './components/views/Logout/Logout'
 import ProductPage from './components/views/ProductPage/ProductPage'
+import Register from './components/views/Register/Register'
 import { addCart } from './redux/cartRedux'
 
 function App() {
@@ -27,6 +30,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product/:id" element={<ProductPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/logout" element={<Logout />} />
       </Routes>
       <Footer />
     </main>

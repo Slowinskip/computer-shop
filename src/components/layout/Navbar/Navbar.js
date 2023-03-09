@@ -8,11 +8,16 @@ const NavBar = () => {
   const [cart, setCart] = useState(
     JSON.parse(localStorage.getItem('cart')) || [],
   )
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem('user')) || [],
+  )
+
   useEffect(() => {
     if (cart.length !== 0) {
       setCart(JSON.parse(localStorage.getItem('cart')))
       getLength()
     }
+    setUser(JSON.parse(localStorage.getItem('user')))
   }, [cart])
 
   function getLength() {

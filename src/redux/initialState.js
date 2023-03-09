@@ -72,7 +72,7 @@ const initialState = {
     },
   ],
   cart: [],
-  user: [],
+  user: [{ login: 'TestUser', password: 'testuser' }],
   orders: [],
 }
 

@@ -3,8 +3,13 @@ import thunk from 'redux-thunk'
 import cartReducer from './cartRedux'
 import initialState from './initialState'
 import productsReducer from './productsRedux'
+import userReducer from './userRedux'
 
-const subreducers = { products: productsReducer, cart: cartReducer }
+const subreducers = {
+  user: userReducer,
+  products: productsReducer,
+  cart: cartReducer,
+}
 
 const reducer = combineReducers(subreducers)
 const store = createStore(

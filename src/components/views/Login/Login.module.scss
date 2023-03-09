@@ -1,0 +1,23 @@
+@import '../../../styles/settings.scss';
+@import '../../../styles/global.scss';
+
+.form {
+  background-color: $main-color;
+  padding: 25px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  color: $color-white;
+
+  .bnt {
+    background-color: transparent;
+    color: $color-orange;
+    border-color: $color-orange;
+    margin-top: 10px;
+
+    &:hover {
+      color: $color-white;
+      background-color: transparent;
+      border-color: $color-white;
+    }
+  }
+}
