@@ -4,7 +4,7 @@ const initialState = {
       id: 1,
       category: 'computer',
       name: 'Lenovo T440',
-      price: '950',
+      price: 950,
       oldPrice: '1000',
       image: ['LenovoT440_1', 'LenovoT440_2', 'LenovoT440_3', 'LenovoT440_4'],
       information:
@@ -14,7 +14,7 @@ const initialState = {
       id: 2,
       category: 'computer',
       name: 'APPLE MacBook Air',
-      price: '5100',
+      price: 5100,
       oldPrice: '0',
       image: ['apple_2', 'apple_1', 'apple_3', 'apple_4'],
       information:
@@ -24,7 +24,7 @@ const initialState = {
       id: 3,
       category: 'computer',
       name: 'ACER Extensa EX215',
-      price: '2500',
+      price: 2500,
       oldPrice: '2650',
       image: ['acer_1', 'acer_2', 'acer_3', 'acer_4'],
       information:
@@ -34,7 +34,7 @@ const initialState = {
       id: 4,
       category: 'keybordandmouse',
       name: 'RAZER Mamba Elite',
-      price: '200',
+      price: 200,
       oldPrice: '0',
       image: [
         'Mamba_Elite_1',
@@ -49,7 +49,7 @@ const initialState = {
       id: 5,
       category: 'keybordandmouse',
       name: 'MAD DOG GK850W',
-      price: '180',
+      price: 180,
       oldPrice: '220',
       image: [
         'Klawiatura-MAD-1',
@@ -64,7 +64,7 @@ const initialState = {
       id: 6,
       category: 'keybordandmouse',
       name: 'RAZER Mamba Elite',
-      price: '440',
+      price: 440,
       oldPrice: '0',
       image: ['logitech-1', 'logitech-2', 'logitech-3', 'logitech-4'],
       information:

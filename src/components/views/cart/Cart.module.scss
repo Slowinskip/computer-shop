@@ -1,0 +1,62 @@
+@import '../../../styles/settings.scss';
+@import '../../../styles/global.scss';
+
+.root {
+  padding: 35px 0;
+  color: $main-color;
+
+  Table {
+    color: $main-color;
+  }
+}
+
+.left_image {
+  width: 120px;
+  height: 120px;
+}
+
+.button {
+  border-radius: 50%;
+  background-color: $main-color;
+  border: none;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .icon {
+    color: white;
+    font-size: 40px;
+  }
+}
+
+.summary {
+  color: $main-color;
+  height: auto;
+  border: 1px solid $main-color;
+
+  p {
+    padding: 20px;
+  }
+
+  h3 {
+    padding: 20px;
+    border-bottom: 1px solid $main-color;
+  }
+  h5 {
+    padding: 20px;
+    border-bottom: 1px solid $main-color;
+  }
+  .bnt {
+    background-color: transparent;
+    color: $main-color;
+    border-color: $main-color;
+
+    &:hover {
+      background-color: $main-color;
+      color: $color-white;
+      border-color: $main-color;
+    }
+  }
+}
