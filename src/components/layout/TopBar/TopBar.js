@@ -49,7 +49,7 @@ const TopBar = () => {
           </Nav.Item>
           <Nav.Item>
             {user ? (
-              <Nav.Link href="/register" style={{ color: '#f39c12' }}>
+              <Nav.Link href="/logout" style={{ color: '#f39c12' }}>
                 <p className="m-0 p-0">Logout</p>
               </Nav.Link>
             ) : (

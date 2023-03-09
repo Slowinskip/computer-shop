@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Alert, Button, Container, Form, Spinner } from 'react-bootstrap'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import shortid from 'shortid'
-import { getUser, getUserByLogin } from '../../../redux/userRedux'
+import { getUserByLogin } from '../../../redux/userRedux'
 import styles from './Login.module.scss'
 
 const Login = () => {
