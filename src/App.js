@@ -20,24 +20,37 @@ function App() {
     JSON.parse(localStorage.getItem('cart')) || [],
   )
   const dispatch = useDispatch()
+
   useEffect(() => {
-    if (cartData.length > 0) {
-      cartData.map((i) => {
-        dispatch(addCart(i))
-      })
-    }
-  }, [cartData])
+    updateReduxCard()
+  }, [])
+
+  function updateReduxCard() {
+    cartData.map((i) => {
+      dispatch(addCart(i))
+    })
+  }
+
+  const updateCart = () => {
+    setcartData(JSON.parse(localStorage.getItem('cart')))
+    console.log('działa ', cartData)
+    updateReduxCard()
+  }
+
   return (
     <main>
       <TopBar />
-      <NavBar />
+      <NavBar cartData={cartData} />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/product/:id" element={<ProductPage />} />
+        <Route path="/" element={<Home updateCart={updateCart} />} />
+        <Route
+          path="/product/:id"
+          element={<ProductPage updateCart={updateCart} />}
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/logout" element={<Logout />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart updateCart={updateCart} />} />
         <Route path="/order" element={<Order />} />
         <Route path="/summary" element={<Summary />} />
         <Route path="/about" element={<About />} />

@@ -1,24 +1,25 @@
 import React, { useState } from 'react'
 import { Button, Col, Container, Row, Table } from 'react-bootstrap'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { getCart } from '../../../redux/cartRedux'
+import { getCart, removeCart } from '../../../redux/cartRedux'
 import styles from './Cart.module.scss'
 import { TiDelete } from 'react-icons/ti'
-const Cart = () => {
+const Cart = ({ updateCart }) => {
   const [cartData, setCartData] = useState(useSelector(getCart))
   console.log(cartData)
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem('user')) || '',
   )
-  console.log(user)
+  const dispatch = useDispatch()
 
   const handleDelete = (id) => {
     let cart = JSON.parse(localStorage.getItem('cart'))
     let tempCart = cart.filter((item) => item.id !== id)
     localStorage.setItem('cart', JSON.stringify(tempCart))
     setCartData(tempCart)
-    console.log(id)
+    updateCart()
+    dispatch(removeCart(id))
   }
 
   function getTotalPrice() {

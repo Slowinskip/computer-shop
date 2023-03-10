@@ -6,7 +6,7 @@ import { getProductsById } from '../../../redux/productsRedux'
 import styles from './ProductPage.module.scss'
 import shortid from 'shortid'
 import { addCart } from '../../../redux/cartRedux'
-const ProductPage = () => {
+const ProductPage = ({ updateCart }) => {
   const { id } = useParams()
   const product = useSelector((state) => getProductsById(state, id))
   const [activePhoto, setActivePhoto] = useState(product.image[0])
@@ -25,6 +25,7 @@ const ProductPage = () => {
     cart.push(data)
     localStorage.setItem('cart', JSON.stringify(cart))
     setStatus('succes')
+    updateCart()
   }
 
   return (

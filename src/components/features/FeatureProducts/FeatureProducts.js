@@ -10,7 +10,7 @@ import {
 } from '../../../redux/productsRedux'
 import ProductBox from '../../common/ProductBox/ProductBox'
 
-const FeatureProducts = () => {
+const FeatureProducts = ({ updateCart }) => {
   const allProducts = useSelector(getProducts)
   const computerProducts = useSelector(getProductsComputer)
   const keyAndMouseProducts = useSelector(getProductsKayboardAndMouse)
@@ -29,7 +29,7 @@ const FeatureProducts = () => {
             <Row xs={1} md={2} lg={4} className="g-3 ">
               {allProducts.map((product) => (
                 <Col key={product.id}>
-                  <ProductBox {...product} />
+                  <ProductBox product={product} updateCart={updateCart} />
                 </Col>
               ))}
             </Row>
@@ -39,7 +39,7 @@ const FeatureProducts = () => {
             <Row xs={1} md={2} lg={4} className="g-3 ">
               {computerProducts.map((product) => (
                 <Col key={product.id}>
-                  <ProductBox {...product} />
+                  <ProductBox product={product} updateCart={updateCart} />
                 </Col>
               ))}
             </Row>
@@ -49,7 +49,7 @@ const FeatureProducts = () => {
             <Row xs={1} md={2} lg={4} className="g-3 ">
               {keyAndMouseProducts.map((product) => (
                 <Col key={product.id}>
-                  <ProductBox {...product} />
+                  <ProductBox product={product} updateCart={updateCart} />
                 </Col>
               ))}
             </Row>

@@ -4,30 +4,34 @@ import styles from './Navbar.module.scss'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
 import { BsCart, BsSearch } from 'react-icons/bs'
-const NavBar = () => {
+const NavBar = ({ cartData }) => {
   const [cart, setCart] = useState(
-    JSON.parse(localStorage.getItem('cart')) || [],
+    cartData || JSON.parse(localStorage.getItem('cart')),
   )
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem('user')) || [],
   )
-
   useEffect(() => {
-    if (cart.length !== 0) {
-      setCart(JSON.parse(localStorage.getItem('cart')))
-      getLength()
-    }
+    setCart(JSON.parse(localStorage.getItem('cart')))
     setUser(JSON.parse(localStorage.getItem('user')))
   }, [cart])
 
   function getLength() {
     let total = 0
-    cart.forEach((item) => {
-      total = total + 1
-    })
-
+    if (
+      typeof cart != 'undefined' &&
+      cart != null &&
+      cart.length != null &&
+      cart.length > 0
+    ) {
+      cart.forEach((i) => {
+        total += 1
+      })
+    }
     return total
   }
+  getLength()
+
   return (
     <Navbar className={styles.navbar}>
       <Container>
@@ -72,7 +76,7 @@ const NavBar = () => {
                 styles.cartLenght
               }
             >
-              {getLength() || 0}
+              {getLength()}
             </p>
           </Col>
         </Navbar.Collapse>

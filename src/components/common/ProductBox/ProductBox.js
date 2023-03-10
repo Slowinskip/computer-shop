@@ -5,12 +5,14 @@ import styles from './ProductBox.module.scss'
 import { BsCart } from 'react-icons/bs'
 import shortid from 'shortid'
 import { useDispatch, useSelector } from 'react-redux'
-import { addCart } from '../../../redux/cartRedux'
+import { addCart, removeCart } from '../../../redux/cartRedux'
 import { getProductsById } from '../../../redux/productsRedux'
 
 const ProductBox = (props) => {
   const [status, setStatus] = useState('')
-  const product = useSelector((state) => getProductsById(state, props.id))
+  const product = useSelector((state) =>
+    getProductsById(state, props.product.id),
+  )
 
   useEffect(() => {
     setTimeout(() => {
@@ -30,6 +32,7 @@ const ProductBox = (props) => {
     cart.push(data)
     localStorage.setItem('cart', JSON.stringify(cart))
     setStatus('succes')
+    props.updateCart()
   }
 
   return (
@@ -37,24 +40,26 @@ const ProductBox = (props) => {
       <Card.Img
         className={styles.cardImage}
         variant="top"
-        src={`./image/productImage/${props.image[0]}.jpg`}
+        src={`./image/productImage/${props.product.image[0]}.jpg`}
       ></Card.Img>
       <Card.Body className="text-center">
-        <Card.Title className={styles.cardTitle}>{props.name}</Card.Title>
+        <Card.Title className={styles.cardTitle}>
+          {props.product.name}
+        </Card.Title>
         <Card.Text className="m-0">
-          {props.oldPrice > 0 ? (
+          {props.product.oldPrice > 0 ? (
             <div className={'d-flex justify-content-center ' + styles.priceDiv}>
-              <span className={styles.price}>${props.price}</span>
-              <span className={styles.oldPrice}>${props.oldPrice}</span>
+              <span className={styles.price}>${props.product.price}</span>
+              <span className={styles.oldPrice}>${props.product.oldPrice}</span>
             </div>
           ) : (
             <div className={'d-flex justify-content-center ' + styles.priceDiv}>
-              <span className={styles.normalPrice}>${props.price}</span>
+              <span className={styles.normalPrice}>${props.product.price}</span>
             </div>
           )}
         </Card.Text>
         <Col className={''}>
-          <Link to={'/product/' + props.id}>
+          <Link to={'/product/' + props.product.id}>
             <Button
               variant="outline-secondary"
               size="sm"

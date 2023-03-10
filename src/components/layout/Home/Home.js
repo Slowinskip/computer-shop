@@ -4,12 +4,12 @@ import CarouselRc from '../../features/Carousel/CarouselRc'
 import FeatureProducts from '../../features/FeatureProducts/FeatureProducts'
 import ImageBox from '../../views/ImageBox/ImageBox'
 
-const Home = () => {
+const Home = ({ updateCart }) => {
   return (
     <Container>
       <CarouselRc />
       <ImageBox />
-      <FeatureProducts />
+      <FeatureProducts updateCart={updateCart} />
     </Container>
   )
 }
