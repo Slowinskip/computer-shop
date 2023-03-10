@@ -21,13 +21,13 @@ const About = () => {
           </p>
         </Col>
         <Col md={12} lg={6} className={styles.col2}>
-          <img src={`./image/about/about-1.jpg`}></img>
-          <img src={`./image/about/about-2.jpg`}></img>
-          <img src={`./image/about/about-4.jpg`}></img>
-          <img src={`./image/about/about-5.jpg`}></img>
+          <img alt="img" src={`./image/about/about-1.jpg`}></img>
+          <img alt="img" src={`./image/about/about-2.jpg`}></img>
+          <img alt="img" src={`./image/about/about-4.jpg`}></img>
+          <img alt="img" src={`./image/about/about-5.jpg`}></img>
         </Col>
         <Col md={12} lg={6} className={styles.col3}>
-          <img src={`./image/about/about-6.jpg`}></img>
+          <img alt="img" src={`./image/about/about-6.jpg`}></img>
         </Col>
         <Col md={12} lg={6} className={styles.col4}>
           <p>
