@@ -1,0 +1,56 @@
+@import '../../../styles/settings.scss';
+@import '../../../styles/global.scss';
+
+.root {
+  margin: 36px 0;
+
+  h2 {
+    color: $main-color;
+    font-weight: 800;
+    margin: 24px 0;
+  }
+
+  .col1,
+  .col4 {
+    font-size: $base-size * 2;
+    background-color: $main-color;
+    color: $color-white;
+    padding: 25px;
+  }
+  .col1 {
+    border-top-left-radius: 50px;
+  }
+  .col4 {
+    border-bottom-right-radius: 50px;
+  }
+  .col3 {
+    border: 2px solid $main-color;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+    img {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      object-fit: cover;
+    }
+  }
+
+  .col2 {
+    padding: 20px;
+    border: 2px solid $main-color;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    img {
+      height: 150px;
+      width: 150px;
+      border-radius: 150px;
+      object-fit: cover;
+    }
+  }
+}

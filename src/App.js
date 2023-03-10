@@ -6,6 +6,7 @@ import Footer from './components/layout/Footer/Footer'
 import Home from './components/layout/Home/Home'
 import NavBar from './components/layout/Navbar/Navbar'
 import TopBar from './components/layout/TopBar/TopBar'
+import About from './components/views/About/About'
 import Cart from './components/views/cart/Cart'
 import Login from './components/views/Login/Login'
 import Logout from './components/views/Logout/Logout'
@@ -39,6 +40,8 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/order" element={<Order />} />
         <Route path="/summary" element={<Summary />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<Home />} />
       </Routes>
       <Footer />
     </main>
