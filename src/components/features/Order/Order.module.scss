@@ -1,0 +1,34 @@
+@import '../../../styles/settings.scss';
+@import '../../../styles/global.scss';
+
+.root {
+  margin: 46px 0;
+  color: $main-color;
+  .info {
+    border: 1px solid $main-color;
+    padding: 15px;
+
+    p,
+    h4,
+    h3 {
+      margin-top: 5px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $main-color;
+    }
+    div {
+      p {
+        border: none;
+      }
+    }
+  }
+  .bnt {
+    background-color: transparent;
+    color: $main-color;
+    border-color: $main-color;
+
+    &:hover {
+      background-color: $main-color;
+      color: $color-white;
+    }
+  }
+}

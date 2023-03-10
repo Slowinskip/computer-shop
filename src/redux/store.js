@@ -2,6 +2,7 @@ import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import cartReducer from './cartRedux'
 import initialState from './initialState'
+import orderReducer from './orderRedux'
 import productsReducer from './productsRedux'
 import userReducer from './userRedux'
 
@@ -9,6 +10,7 @@ const subreducers = {
   user: userReducer,
   products: productsReducer,
   cart: cartReducer,
+  order: orderReducer,
 }
 
 const reducer = combineReducers(subreducers)
